@@ -3,7 +3,7 @@
 ini_set('memory_limit','-1');
 
 require 'vendor/autoload.php';
-$conn = new mysqli('ec2-18-188-216-176.us-east-2.compute.amazonaws.com', 'root', 'admin123', 'excelreader');
+$conn = new mysqli('localhost', 'root', 'admin123', 'excelreader');
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
