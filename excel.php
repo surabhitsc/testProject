@@ -3,7 +3,7 @@
 ini_set('memory_limit','-1');
 
 require 'vendor/autoload.php';
-$conn = new mysqli('localhost', 'root', '', 'excelreader');
+$conn = new mysqli('ec2-18-188-216-176.us-east-2.compute.amazonaws.com', 'root', 'admin123', 'excelreader');
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -30,7 +30,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx as ExcelReader;
 		 $spreadsheet = $reader->load($excelFile);
 
 		 $sheetNames = $spreadsheet->getSheetNames();
-		echo $totalSheets = count($sheetNames); die;
+		 $totalSheets = count($sheetNames);
 
 		 $activeIndex = (isset($_REQUEST['currentIndex']) ? $_REQUEST('currentIndex') : 2);
 
